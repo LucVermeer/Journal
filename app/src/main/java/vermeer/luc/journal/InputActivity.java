@@ -19,6 +19,18 @@ public class InputActivity extends AppCompatActivity {
 
     public void AddEntry(View view) {
         // Add to database
+        EditText editTitle = findViewById(R.id.editTitle);
+        EditText editContent = findViewById(R.id.editContent);
+        EditText editMood = findViewById(R.id.editMood);
+
+        String title = editTitle.getText().toString();
+        String content = editContent.getText().toString();
+        String mood = editMood.getText().toString();
+
+        JournalEntry journalEntry = new JournalEntry(title, content, mood);
+
+        EntryDatabase db = EntryDatabase.getInstance(getApplicationContext());
+        db.insert(journalEntry);
 
         // Go back to activity
         Intent intent = new Intent(InputActivity.this, MainActivity.class);

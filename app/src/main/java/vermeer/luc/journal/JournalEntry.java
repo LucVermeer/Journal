@@ -3,22 +3,14 @@ package vermeer.luc.journal;
 import java.io.Serializable;
 
 public class JournalEntry implements Serializable {
-    private int id;
     private String title;
     private String content;
-    private int mood;
-    private int timestamp;
+    private String mood;
 
-    public JournalEntry(int id, String title, String content, int mood, int timestamp) {
-        this.id = id;
+    public JournalEntry(String title, String content, String mood) {
         this.title = title;
         this.content = content;
         this.mood = mood;
-        this.timestamp = timestamp;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getTitle() {
@@ -29,16 +21,8 @@ public class JournalEntry implements Serializable {
         return content;
     }
 
-    public int getMood() {
+    public String getMood() {
         return mood;
-    }
-
-    public int getTimestamp() {
-        return timestamp;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setTitle(String title) {
@@ -49,11 +33,7 @@ public class JournalEntry implements Serializable {
         this.content = content;
     }
 
-    public void setMood(int mood) {
+    public void setMood(String mood) {
         this.mood = mood;
-    }
-
-    public void setTimestamp(int timestamp) {
-        this.timestamp = timestamp;
     }
 }
